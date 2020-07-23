@@ -1,0 +1,24 @@
+//button play, pause 
+ @IBAction func play(_ sender: Any) {
+        if audioStuffed == false && audioPlayer.isPlaying == false {
+            audioPlayer.play()
+        }
+    }
+    
+    
+    @IBAction func pause(_ sender: Any) {
+        if audioStuffed == true && audioPlayer.isPlaying {
+            audioPlayer.pause()
+        }
+    }
+func playThis(thisOne:String) {
+        do {
+            let audioPath = Bundle.main.path(forResource: thisOne, ofType: ".mp3")
+            try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+            audioPlayer.play()
+        }
+        catch {
+            print("ERROR")
+            
+        }
+    }
