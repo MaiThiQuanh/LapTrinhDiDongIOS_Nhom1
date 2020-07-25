@@ -1,0 +1,11 @@
+//button next
+@IBAction func next(_ sender: Any) {
+        if thisSong < songs.count-1 && audioStuffed == true {
+            playThis(thisOne: songs[thisSong+1])
+            thisSong += 1
+            lbltheSong.text = songs[thisSong]
+        }
+        else {
+            print("Can not play the song!")
+        }
+    }

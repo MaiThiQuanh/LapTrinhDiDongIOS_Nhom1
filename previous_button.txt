@@ -1,0 +1,11 @@
+// tr? v? bài nh?c tru?c, x? lý button previous
+@IBAction func prev(_ sender: Any) {
+        if thisSong != 0 && audioStuffed == true {
+            playThis(thisOne: songs[thisSong-1])
+            thisSong -= 1
+            lbltheSong.text = songs[thisSong]
+        }
+        else {
+            print("Can not play the song!")
+        }
+    }
